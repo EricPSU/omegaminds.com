@@ -1,0 +1,2 @@
+# omegaminds.com
+omegaminds.com
