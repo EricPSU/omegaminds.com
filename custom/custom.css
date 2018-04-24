@@ -1,0 +1,39 @@
+/* ----------------------------------------------------------------
+	Custom CSS
+
+	Add all your Custom Styled CSS here for New Styles or
+	Overwriting Default Theme Styles for Better Hanlding Updates
+-----------------------------------------------------------------*/
+
+.slider-caption.slider-caption-center {
+	max-width: 1000px;
+}
+
+.slider-caption {
+	text-transform: uppercase;
+}
+
+.slider-caption p{
+	text-transform: none;
+}
+
+.leftmargin-lg { margin-left: 150px; }
+
+.heading-block h2 {
+	letter-spacing: 1px;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+}
+
+
+@media (max-width: 991px) {
+	#header.transparent-header.dark:not(.sticky-header) #header-wrap {
+		background-color: #111;
+	}
+	
+}
+
+#footer.dark, .dark #footer {
+    background-color: #111;
+}
+
