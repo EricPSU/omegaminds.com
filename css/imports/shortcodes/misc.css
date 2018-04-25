@@ -38,19 +38,6 @@
 
 #portfolio-ajax-loader img { display: block; }
 
-.page-load-status {
-	position: relative;
-	display: none;
-	padding: 30px 0;
-}
-
-.page-load-status .css3-spinner {
-	position: absolute;
-	z-index: auto;
-	background-color: transparent !important;
-}
-
-.page-load-status .css3-spinner-ball-pulse-sync > div { background-color: #333; }
 
 /* ----------------------------------------------------------------
 	Forms
@@ -168,8 +155,6 @@ label.error {
 }
 
 label.error { display: none !important; }
-
-.show-error-msg + label.error { display: block !important; }
 
 .form-control.error,
 .sm-form-control.error { border-color: #E42C3E; }
@@ -390,7 +375,7 @@ body:not(.device-touch) #gotoTop {
 .error404 {
 	display: block;
 	font-size: 216px;
-	font-weight: 700;
+	font-weight: 600;
 	color: #DDD;
 	line-height: 1.35;
 	letter-spacing: 4px;
@@ -497,19 +482,14 @@ body:not(.device-touch) #gotoTop {
 }
 
 .toast-close-button {
-	position: relative;
-	right: -0.3em;
-	top: -0.3em;
-	float: right;
-	font-size: 20px;
-	font-weight: bold;
-	color: #FFFFFF;
-	-webkit-text-shadow: 0 1px 0 #ffffff;
-	text-shadow: 0 1px 0 #ffffff;
+	position: absolute;
+	right: 5px;
+	top: 3px;
+	font-size: 14px;
+	color: #ffffff;
 	opacity: 0.8;
 	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
 	filter: alpha(opacity=80);
-	line-height: 1;
 }
 
 .toast-close-button:hover,
@@ -517,19 +497,12 @@ body:not(.device-touch) #gotoTop {
 	color: #000000;
 	text-decoration: none;
 	cursor: pointer;
-	opacity: 0.4;
-	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
-	filter: alpha(opacity=40);
+	opacity: 0.5;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+	filter: alpha(opacity=50);
 }
 
-.rtl .toast-close-button {
-	left: -0.3em;
-	float: left;
-	right: 0.3em;
-}
-/*Additional properties for button version
- iOS requires the button element instead of an anchor tag.
- If you want the anchor version, it requires `href="#"`.*/
+
 button.toast-close-button {
 	padding: 0;
 	cursor: pointer;
@@ -572,9 +545,7 @@ button.toast-close-button {
 
 #toast-container {
 	position: fixed;
-	z-index: 999999;
-	pointer-events: none;
-	/*overrides*/
+	z-index: 1999;
 }
 
 #toast-container * {
@@ -584,46 +555,37 @@ button.toast-close-button {
 }
 
 #toast-container > div {
-	position: relative;
-	pointer-events: auto;
-	overflow: hidden;
 	margin: 0 0 6px;
-	padding: 20px 25px;
+	padding: 15px;
 	width: 300px;
-	-moz-border-radius: 3px 3px 3px 3px;
-	-webkit-border-radius: 3px 3px 3px 3px;
-	border-radius: 3px 3px 3px 3px;
+	border-radius: 3px;
+	background-position: 15px center;
 	background-repeat: no-repeat;
-	-moz-box-shadow: 0 0 12px #999999;
-	-webkit-box-shadow: 0 0 12px #999999;
-	box-shadow: 0 0 12px #999999;
-	color: #FFFFFF;
+	color: #ffffff;
 	opacity: 0.8;
 	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
 	filter: alpha(opacity=80);
 }
 
-#toast-container > div.rtl { direction: rtl; }
-#toast-container > div:hover {
-	-moz-box-shadow: 0 0 12px #000000;
-	-webkit-box-shadow: 0 0 12px #000000;
-	box-shadow: 0 0 12px #000000;
+#toast-container > div i {
+	position: relative;
+	top: 1px;
+	width: 16px;
+	text-align: center;
+	margin-right: 3px;
+}
+
+#toast-container > :hover {
 	opacity: 1;
 	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
 	filter: alpha(opacity=100);
 	cursor: pointer;
 }
-#toast-container.toast-top-center > div,
-#toast-container.toast-bottom-center > div {
-	width: 300px;
-	margin-left: auto;
-	margin-right: auto;
-}
+
 #toast-container.toast-top-full-width > div,
 #toast-container.toast-bottom-full-width > div {
 	width: 96%;
-	margin-left: auto;
-	margin-right: auto;
+	margin: auto;
 }
 
 .toast { background-color: #030303; }
@@ -637,48 +599,16 @@ button.toast-close-button {
 .toast-warning { background-color: #f89406; }
 
 
-.toast-progress {
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	height: 4px;
-	background-color: #000000;
-	opacity: 0.4;
-	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
-	filter: alpha(opacity=40);
-}
-/*Responsive Design*/
-@media all and (max-width: 240px) {
+@media all and (min-width: 240px) and (max-width: 479px) {
 	#toast-container > div {
-		padding: 10px 15px;
-		width: 11em;
-	}
-	#toast-container .toast-close-button {
-		right: -0.2em;
-		top: -0.2em;
-	}
-	#toast-container .rtl .toast-close-button {
-		left: -0.2em;
-		right: 0.2em;
-	}
-}
-@media all and (min-width: 241px) and (max-width: 480px) {
-	#toast-container > div {
-		padding: 10px 15px;
+		padding: 8px;
 		width: 18em;
 	}
-	#toast-container .toast-close-button {
-		right: -0.2em;
-		top: -0.2em;
-	}
-	#toast-container .rtl .toast-close-button {
-		left: -0.2em;
-		right: 0.2em;
-	}
 }
-@media all and (min-width: 481px) and (max-width: 768px) {
+
+@media all and (min-width: 480px) and (max-width: 767px) {
 	#toast-container > div {
-		padding: 15px 20px;
+		padding: 15px;
 		width: 25em;
 	}
 }

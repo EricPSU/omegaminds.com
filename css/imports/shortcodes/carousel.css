@@ -97,10 +97,9 @@
 
 .owl-carousel .owl-nav.disabled, .owl-carousel .owl-dots.disabled { display: none; }
 
-.owl-nav .owl-prev,
-.owl-nav .owl-next,
-.owl-dot,
-.owl-dots button {
+.owl-carousel .owl-nav .owl-prev,
+.owl-carousel .owl-nav .owl-next,
+.owl-carousel .owl-dot {
 	cursor: pointer;
 	cursor: hand;
 	-webkit-user-select: none;
@@ -296,7 +295,7 @@
 	*display: inline;
 }
 
-.owl-carousel .owl-dots .owl-dot {
+.owl-carousel .owl-dots .owl-dot span {
 	display: block;
 	width: 8px;
 	height: 8px;

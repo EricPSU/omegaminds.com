@@ -5,35 +5,21 @@
 	Overwriting Default Theme Styles for Better Hanlding Updates
 -----------------------------------------------------------------*/
 
-.slider-caption.slider-caption-center {
-	max-width: 1000px;
+body.stretched #header.full-header .container {
+	padding: 0 0 0 30px;
 }
 
-.slider-caption {
-	text-transform: uppercase;
+
+#header.full-header #primary-menu > ul {
+	margin-right: 0;
 }
 
-.slider-caption p{
-	text-transform: none;
-}
-
-.leftmargin-lg { margin-left: 150px; }
-
-.heading-block h2 {
-	letter-spacing: 1px;
-	font-family: 'Raleway', sans-serif;
-	font-weight: 700;
-}
+body,
+.dropdown-menu { font-size: 14px; }
 
 
 @media (max-width: 991px) {
 	#header.transparent-header.dark:not(.sticky-header) #header-wrap {
 		background-color: #111;
 	}
-	
 }
-
-#footer.dark, .dark #footer {
-    background-color: #111;
-}
-
